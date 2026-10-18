@@ -1,459 +1,559 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MBA Economics Assignment Portal</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;padding:14px;background:#f2f5fa;color:#203047;font-family:Arial,sans-serif}
-main{max-width:950px;margin:15px auto}
-header{background:#173b70;color:white;padding:23px;border-radius:12px;margin-bottom:18px}
-header h1{margin:0 0 8px;font-size:25px}
-header p{margin:0}
-.card{background:white;padding:20px;border-radius:12px;margin-bottom:18px;box-shadow:0 3px 12px #0000000b}
-h2{margin-top:0;font-size:21px}
-label{display:block;font-weight:bold;margin:14px 0 6px}
-input,select{width:100%;padding:12px;border:1px solid #cbd4e1;border-radius:7px;font-size:16px;background:white}
-button{border:0;border-radius:7px;padding:11px 14px;font-size:15px;cursor:pointer}
-button:disabled{opacity:.55;cursor:wait}
-.primary{background:#173b70;color:white;width:100%;margin-top:18px}
-.secondary{background:#e7edf6;color:#173b70}
-.hidden{display:none!important}
-.top{display:flex;justify-content:flex-end;margin-bottom:12px}
-.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.message{line-height:1.5;overflow-wrap:anywhere}
-.small{font-size:13px;color:#5c6678;line-height:1.5}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;min-width:600px}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #e2e7ef;font-size:14px;vertical-align:middle}
-th{background:#f1f4f9}
-.actions{display:flex;gap:6px;flex-wrap:wrap}
-.actions button{font-size:13px;padding:8px 10px}
-#progressTrack{height:8px;background:#e5eaf2;border-radius:10px;overflow:hidden;margin-top:12px}
-#progressBar{height:100%;width:0;background:#26744d;transition:width .2s}
-.pager{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}
-@media(max-width:520px){body{padding:9px}.card{padding:14px}header{padding:18px}.pager{flex-wrap:wrap}}
-</style>
-</head>
-<body>
-<main>
-<div class="top">
-<button type="button" class="secondary" id="adminBtn">Admin Login</button>
-</div>
-
-<header>
-<h1>MBA Assignment Portal</h1>
-<p>Economics — Assignment Submission</p>
-</header>
-
-<section class="card" id="studentSection">
-<h2>Submit Your Assignment</h2>
-<form id="assignmentForm">
-<label for="studentName">Student Name</label>
-<input id="studentName" maxlength="100" required placeholder="Enter your full name">
-
-<label for="roll">Roll Number</label>
-<input id="roll" maxlength="30" required placeholder="Enter your roll number">
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title>MBA Economics Assignment Portal</title>  
+<style>  
+*{box-sizing:border-box}  
+body{margin:0;padding:14px;background:#f2f5fa;color:#203047;font-family:Arial,sans-serif}  
+main{max-width:950px;margin:15px auto}  
+header{background:#173b70;color:white;padding:23px;border-radius:12px;margin-bottom:18px}  
+header h1{margin:0 0 8px;font-size:25px}  
+header p{margin:0}  
+.card{background:white;padding:20px;border-radius:12px;margin-bottom:18px;box-shadow:0 3px 12px #0000000b}  
+h2{margin-top:0;font-size:21px}  
+label{display:block;font-weight:bold;margin:14px 0 6px}  
+input,select{width:100%;padding:12px;border:1px solid #cbd4e1;border-radius:7px;font-size:16px;background:white}  
+button{border:0;border-radius:7px;padding:11px 14px;font-size:15px;cursor:pointer}  
+button:disabled{opacity:.55;cursor:wait}  
+.primary{background:#173b70;color:white;width:100%;margin-top:18px}  
+.secondary{background:#e7edf6;color:#173b70}  
+.hidden{display:none!important}  
+.top{display:flex;justify-content:flex-end;margin-bottom:12px}  
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}  
+.message{line-height:1.5;overflow-wrap:anywhere}  
+.small{font-size:13px;color:#5c6678;line-height:1.5}  
+.table-wrap{overflow-x:auto}  
+table{width:100%;border-collapse:collapse;min-width:600px}  
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #e2e7ef;font-size:14px;vertical-align:middle}  
+th{background:#f1f4f9}  
+.actions{display:flex;gap:6px;flex-wrap:wrap}  
+.actions button{font-size:13px;padding:8px 10px}  
+#progressTrack{height:8px;background:#e5eaf2;border-radius:10px;overflow:hidden;margin-top:12px}  
+#progressBar{height:100%;width:0;background:#26744d;transition:width .2s}  
+.pager{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}  
+@media(max-width:520px){body{padding:9px}.card{padding:14px}header{padding:18px}.pager{flex-wrap:wrap}}  
+</style>  
+</head>  
+<body>  
+<main>  
+<div class="top">  
+<button type="button" class="secondary" id="adminBtn">Admin Login</button>  
+</div>  <header>  
+<h1>MBA Assignment Portal</h1>  
+<p>Economics — Assignment Submission</p>  
+</header>  <section class="card" id="studentSection">  
+<h2>Submit Your Assignment</h2>  
+<form id="assignmentForm">  
+<label for="studentName">Student Name</label>  
+<input id="studentName" maxlength="100" required placeholder="Enter your full name">  <label for="roll">Roll Number</label>
+<input id="roll" type="number" min="1" step="1" inputmode="numeric" required placeholder="Enter your roll number">
 
 <label for="className">Class</label>
 <select id="className" required><option value="MBA">MBA</option></select>
 
 <label for="division">Division</label>
 <select id="division" required>
-<option value="">Select division</option>
-<option value="A">A</option><option value="B">B</option><option value="C">C</option>
-</select>
 
-<label for="subject">Subject</label>
+<option value="">Select division</option>  
+<option value="A">A</option><option value="B">B</option><option value="C">C</option>  
+</select>  <label for="subject">Subject</label>
 <input id="subject" value="Economics" readonly>
 
-<label for="pdf">Assignment PDF (maximum 10 MB)</label>
+<label for="pdf">Assignment PDF (maximum 15 MB)</label>
 <input id="pdf" type="file" accept=".pdf,application/pdf" required>
 
 <button type="submit" class="primary" id="submitBtn">Submit Assignment</button>
-<div id="progressTrack" class="hidden"><div id="progressBar"></div></div>
-</form>
-<p id="message" class="message" role="status"></p>
-</section>
 
-<section class="card hidden" id="loginSection">
-<h2>Admin Login</h2>
-<form id="loginForm">
-<label for="adminEmail">Admin Email</label>
-<input id="adminEmail" type="email" autocomplete="username" required>
-<label for="adminPassword">Admin Password</label>
-<input id="adminPassword" type="password" autocomplete="current-password" required>
-<button type="submit" class="primary" id="loginBtn">Login</button>
-</form>
-<p id="loginMessage" class="message" role="status"></p>
-<button type="button" class="secondary" id="backBtn">Back to Student Page</button>
-</section>
-
-<section class="card hidden" id="dashboardSection">
-<h2>Teacher Dashboard</h2>
-<p id="dashboardMessage" class="message" role="status"></p>
-<div class="toolbar">
-<button type="button" class="secondary" id="refreshBtn">Refresh</button>
-<button type="button" class="secondary" id="logoutBtn">Logout</button>
-</div>
-<div class="table-wrap">
-<table>
-<thead><tr>
-<th>Student</th><th>Roll No.</th><th>Division</th><th>Subject</th><th>PDF Actions</th>
-</tr></thead>
-<tbody id="assignmentList"></tbody>
-</table>
-</div>
-<div class="pager">
-<button type="button" class="secondary" id="prevBtn">Previous</button>
-<span id="pageLabel" class="small">Page 1</span>
-<button type="button" class="secondary" id="nextBtn">Next</button>
-</div>
-</section>
-<p class="small">Submit your own assignment PDF. Only authorised administrators can access submissions.</p>
-</main>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-(() => {
-"use strict";
-
-const SUPABASE_URL = "https://hpyfnbyqtlwfvhoimobv.supabase.co";
-const SUPABASE_KEY = "sb_publishable_WdkjYFctxvBcTXrJvRJjDQ_Cjuw_9xQ";
-const BUCKET = "economics-pdfs";
-const PAGE_SIZE = 25;
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-const $ = id => document.getElementById(id);
-
-let page = 0;
-let loadingList = false;
-
-const studentSection = $("studentSection");
-const loginSection = $("loginSection");
-const dashboardSection = $("dashboardSection");
-
-function showSection(section) {
-[studentSection, loginSection, dashboardSection].forEach(el => el.classList.add("hidden"));
-section.classList.remove("hidden");
-}
-
-$("adminBtn").addEventListener("click", () => {
-$("loginMessage").textContent = "";
-showSection(loginSection);
-});
-$("backBtn").addEventListener("click", () => showSection(studentSection));
-
-$("assignmentForm").addEventListener("submit", async function(e) {
-e.preventDefault();
-const form = this;
-const button = $("submitBtn");
-const message = $("message");
-const file = $("pdf").files[0];
-
-if (!file) return alert("Please select your assignment PDF.");
-if (!file.name.toLowerCase().endsWith(".pdf") ||
-(file.type && file.type !== "application/pdf")) {
-return alert("Please select a PDF file.");
-}
-if (file.size === 0 || file.size > 10 * 1024 * 1024) {
-return alert("The PDF must be greater than 0 bytes and no larger than 10 MB.");
-}
-if (!navigator.onLine) return alert("Check your internet connection.");
-
-button.disabled = true;
-button.textContent = "Submitting...";
-$("progressTrack").classList.remove("hidden");
-$("progressBar").style.width = "10%";
-message.textContent = "Step 1/2: Uploading PDF. Please wait...";
-let uploadedPath = null;
-
-try {
-const studentName = $("studentName").value.trim();
-const rollNumber = $("roll").value.trim();
-const division = $("division").value;
-const className = $("className").value;
-
-if (!studentName || !rollNumber || !division) {
-throw new Error("Please complete all required fields.");
-}
-
-const randomId = crypto.randomUUID
-? crypto.randomUUID()
-: Date.now() + "-" + Math.random().toString(36).slice(2);
-
-const filePath = "submissions/" + randomId + ".pdf";
-
-const { error: uploadError } = await db.storage.from(BUCKET).upload(filePath, file, {
-contentType: "application/pdf",
-upsert: false
-});
-if (uploadError) throw uploadError;
-
-uploadedPath = filePath;
-$("progressBar").style.width = "80%";
-message.textContent = "Step 2/2: PDF uploaded. Saving submission details...";
-
-const { error: insertError } = await db.from("assignments").insert([{
-student_name: studentName,
-roll_number: rollNumber,
-class_name: className,
-division,
-subject: "Economics",
-pdf_path: filePath
-}]);
-
-if (insertError) {
-throw new Error("PDF uploaded, but saving details failed: " + insertError.message);
-}
-
-$("progressBar").style.width = "100%";
-message.textContent = "Assignment submitted successfully!";
-form.reset();
-alert("Success! Your assignment has been submitted.");
-
-} catch (error) {
-console.error("Submission error:", error);
-message.textContent = "Submission failed: " + error.message;
-alert("Submission failed:\n" + error.message);
-if (uploadedPath) console.warn("Uploaded PDF path:", uploadedPath);
-} finally {
-button.disabled = false;
-button.textContent = "Submit Assignment";
-setTimeout(() => {
-$("progressTrack").classList.add("hidden");
-$("progressBar").style.width = "0";
-}, 800);
-}
-});
-
-async function verifyAdmin() {
-const { data: userData, error: userError } = await db.auth.getUser();
-if (userError || !userData.user) throw new Error("Please log in again.");
-
-const { data: admin, error } = await db.from("portal_admins")
-.select("user_id")
-.eq("user_id", userData.user.id)
-.maybeSingle();
-
-if (error) throw error;
-if (!admin) throw new Error("This account is not authorised as an admin.");
-return userData.user;
-}
-
-$("loginForm").addEventListener("submit", async function(e) {
-e.preventDefault();
-const button = $("loginBtn");
-const message = $("loginMessage");
-button.disabled = true;
-message.textContent = "Checking login...";
-
-try {
-const { error } = await db.auth.signInWithPassword({
-email: $("adminEmail").value.trim(),
-password: $("adminPassword").value
-});
-if (error) throw error;
-await verifyAdmin();
-this.reset();
-page = 0;
-showSection(dashboardSection);
-await loadAssignments();
-} catch (error) {
-console.error("Login error:", error);
-message.textContent = error.message || "Login failed.";
-alert("Login failed:\n" + message.textContent);
-} finally {
-button.disabled = false;
-}
-});
-
-function addCell(row, value) {
-const cell = document.createElement("td");
-cell.textContent = value == null ? "" : String(value);
-row.appendChild(cell);
-return cell;
-}
-
-// NEW PDF VIEWING METHOD
-// The browser tab is opened from the button click before awaiting Supabase.
-async function openPdf(path, download, pdfTab) {
-try {
-await verifyAdmin();
-
-const request = db.storage.from(BUCKET).createSignedUrl(
-path,
-300,
-download ? { download: true } : { download: false }
-);
-
-const timeout = new Promise((_, reject) => {
-setTimeout(() => reject(new Error(
-"Supabase took too long to create the PDF link. Check your connection and try again."
-)), 15000);
-});
-
-const { data, error } = await Promise.race([request, timeout]);
-
-if (error) throw error;
-if (!data || !data.signedUrl) throw new Error("Supabase did not return a PDF link.");
-
-if (download) {
-if (pdfTab) pdfTab.location.replace(data.signedUrl);
-else window.location.assign(data.signedUrl);
-} else {
-if (!pdfTab || pdfTab.closed) {
-throw new Error("The PDF tab was blocked. Allow pop-ups for this site and try again.");
-}
-pdfTab.location.replace(data.signedUrl);
-}
-} catch (error) {
-if (pdfTab && !pdfTab.closed) {
-try {
-pdfTab.document.body.innerHTML =
-"<p style='font:16px Arial;padding:20px'>Could not open PDF: " +
-String(error.message || error).replace(/[<>&"]/g, "") +
-"<br><br>Return to the assignment portal and try again.</p>";
-} catch (_) {
-pdfTab.close();
-}
-}
-throw error;
-}
-}
-
-async function loadAssignments() {
-if (loadingList) return;
-loadingList = true;
-$("refreshBtn").disabled = true;
-$("prevBtn").disabled = true;
-$("nextBtn").disabled = true;
-$("dashboardMessage").textContent = "Loading submissions...";
-$("assignmentList").replaceChildren();
-
-try {
-await verifyAdmin();
-const start = page * PAGE_SIZE;
-const end = start + PAGE_SIZE - 1;
-
-const { data, error, count } = await db.from("assignments")
-.select("id, student_name, roll_number, division, subject, pdf_path", { count: "exact" })
-.order("id", { ascending: false })
-.range(start, end);
-
-if (error) throw error;
-const records = data || [];
-
-if (records.length === 0 && page > 0) {
-page--;
-$("dashboardMessage").textContent = "No more submissions on this page.";
-} else {
-$("dashboardMessage").textContent = count === 0
-? "No assignments submitted yet."
-: "Total submissions: " + (count == null ? "unknown" : count) +
-". Showing " + (records.length ? start + 1 : 0) + "–" + (start + records.length) + ".";
-
-for (const item of records) {
-const row = document.createElement("tr");
-addCell(row, item.student_name);
-addCell(row, item.roll_number);
-addCell(row, item.division);
-addCell(row, item.subject);
-
-const pdfCell = document.createElement("td");
-const actions = document.createElement("div");
-actions.className = "actions";
-
-const viewButton = document.createElement("button");
-viewButton.type = "button";
-viewButton.className = "secondary";
-viewButton.textContent = "View PDF";
-
-const downloadButton = document.createElement("button");
-downloadButton.type = "button";
-downloadButton.className = "secondary";
-downloadButton.textContent = "Download";
-
-viewButton.addEventListener("click", async () => {
-// Open tab immediately during the click to avoid popup blocking.
-const pdfTab = window.open("about:blank", "_blank");
-if (!pdfTab) {
-alert("Your browser blocked the PDF tab. Allow pop-ups and try again.");
-return;
-}
-
-try {
-pdfTab.document.title = "Opening assignment PDF...";
-pdfTab.document.body.innerHTML =
-"<p style='font:16px Arial;padding:20px'>Preparing your PDF…</p>";
-viewButton.disabled = true;
-viewButton.textContent = "Preparing...";
-await openPdf(item.pdf_path, false, pdfTab);
-} catch (error) {
-alert("Could not open PDF:\n" + (error.message || error));
-} finally {
-viewButton.disabled = false;
-viewButton.textContent = "View PDF";
-}
-});
-
-downloadButton.addEventListener("click", async () => {
-downloadButton.disabled = true;
-try {
-await verifyAdmin();
-const { data, error } = await db.storage.from(BUCKET)
-.createSignedUrl(item.pdf_path, 300, { download: true });
-if (error) throw error;
-if (!data || !data.signedUrl) throw new Error("No download link was returned.");
-window.location.assign(data.signedUrl);
-} catch (error) {
-alert("Could not download PDF:\n" + error.message);
-} finally {
-downloadButton.disabled = false;
-}
-});
-
-actions.append(viewButton, downloadButton);
-pdfCell.appendChild(actions);
-row.appendChild(pdfCell);
-$("assignmentList").appendChild(row);
-}
-}
-
-$("pageLabel").textContent = "Page " + (page + 1);
-$("prevBtn").disabled = page === 0;
-$("nextBtn").disabled = count != null
-? start + records.length >= count
-: records.length < PAGE_SIZE;
-
-} catch (error) {
-console.error("Dashboard error:", error);
-$("dashboardMessage").textContent = "Could not load submissions: " + error.message;
-alert("Dashboard error:\n" + error.message);
-} finally {
-loadingList = false;
-$("refreshBtn").disabled = false;
-}
-}
-
-$("refreshBtn").addEventListener("click", loadAssignments);
-$("prevBtn").addEventListener("click", async () => {
-if (page > 0) { page--; await loadAssignments(); }
-});
-$("nextBtn").addEventListener("click", async () => {
-page++; await loadAssignments();
-});
-$("logoutBtn").addEventListener("click", async () => {
-await db.auth.signOut();
-$("assignmentList").replaceChildren();
-$("dashboardMessage").textContent = "";
-page = 0;
-showSection(studentSection);
-});
-
-console.log("Assignment Portal loaded.");
-})();
-</script>
-</body>
-</html>
+<div id="progressTrack" class="hidden"><div id="progressBar"></div></div>  
+</form>  
+<p id="message" class="message" role="status"></p>  
+</section>  <section class="card hidden" id="loginSection">  
+<h2>Admin Login</h2>  
+<form id="loginForm">  
+<label for="adminEmail">Admin Email</label>  
+<input id="adminEmail" type="email" autocomplete="username" required>  
+<label for="adminPassword">Admin Password</label>  
+<input id="adminPassword" type="password" autocomplete="current-password" required>  
+<button type="submit" class="primary" id="loginBtn">Login</button>  
+</form>  
+<p id="loginMessage" class="message" role="status"></p>  
+<button type="button" class="secondary" id="backBtn">Back to Student Page</button>  
+</section>  <section class="card hidden" id="dashboardSection">  
+<h2>Teacher Dashboard</h2>  
+<p id="dashboardMessage" class="message" role="status"></p>  
+<div class="toolbar">  
+<button type="button" class="secondary" id="refreshBtn">Refresh</button>  
+<button type="button" class="secondary" id="logoutBtn">Logout</button>  
+</div>  
+<div class="table-wrap">  
+<table>  
+<thead><tr>  
+<th>Student</th><th>Roll No.</th><th>Division</th><th>Subject</th><th>PDF Actions</th>  
+</tr></thead>  
+<tbody id="assignmentList"></tbody>  
+</table>  
+</div>  
+<div class="pager">  
+<button type="button" class="secondary" id="prevBtn">Previous</button>  
+<span id="pageLabel" class="small">Page 1</span>  
+<button type="button" class="secondary" id="nextBtn">Next</button>  
+</div>  
+</section>  
+<p class="small">Submit your own assignment PDF. Only authorised administrators can access submissions.</p>  
+</main>  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script>  
+(() => {  
+"use strict";  
+  
+const SUPABASE_URL = "https://hpyfnbyqtlwfvhoimobv.supabase.co";  
+const SUPABASE_KEY = "sb_publishable_WdkjYFctxvBcTXrJvRJjDQ_Cjuw_9xQ";  
+const BUCKET = "economics-pdfs";  
+const PAGE_SIZE = 25;  
+const MAX_PDF_SIZE = 15 * 1024 * 1024;  
+const FETCH_BATCH_SIZE = 500;  
+  
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);  
+const $ = id => document.getElementById(id);  
+  
+let page = 0;  
+let loadingList = false;  
+  
+const studentSection = $("studentSection");  
+const loginSection = $("loginSection");  
+const dashboardSection = $("dashboardSection");  
+  
+function showSection(section) {  
+  [studentSection, loginSection, dashboardSection].forEach(el =>  
+    el.classList.add("hidden")  
+  );  
+  section.classList.remove("hidden");  
+}  
+  
+$("adminBtn").addEventListener("click", () => {  
+  $("loginMessage").textContent = "";  
+  showSection(loginSection);  
+});  
+  
+$("backBtn").addEventListener("click", () => showSection(studentSection));  
+  
+$("assignmentForm").addEventListener("submit", async function(e) {  
+  e.preventDefault();  
+  
+  const form = this;  
+  const button = $("submitBtn");  
+  const message = $("message");  
+  const file = $("pdf").files[0];  
+  
+  if (!file) return alert("Please select your assignment PDF.");  
+  
+  if (!file.name.toLowerCase().endsWith(".pdf") ||  
+      (file.type && file.type !== "application/pdf")) {  
+    return alert("Please select a PDF file.");  
+  }  
+  
+  if (file.size === 0 || file.size > MAX_PDF_SIZE) {  
+    return alert("The PDF must be greater than 0 bytes and no larger than 15 MB.");  
+  }  
+  
+  if (!navigator.onLine) return alert("Check your internet connection.");  
+  
+  const rollValue = $("roll").value.trim();  
+  
+  if (!/^[0-9]+$/.test(rollValue) || Number(rollValue) < 1) {  
+    return alert("Please enter a valid positive numeric roll number.");  
+  }  
+  
+  button.disabled = true;  
+  button.textContent = "Submitting...";  
+  $("progressTrack").classList.remove("hidden");  
+  $("progressBar").style.width = "10%";  
+  message.textContent = "Step 1/2: Uploading PDF. Please wait...";  
+  
+  let uploadedPath = null;  
+  
+  try {  
+    const studentName = $("studentName").value.trim();  
+    const rollNumber = rollValue;  
+    const division = $("division").value;  
+    const className = $("className").value;  
+  
+    if (!studentName || !division) {  
+      throw new Error("Please complete all required fields.");  
+    }  
+  
+    const randomId = crypto.randomUUID  
+      ? crypto.randomUUID()  
+      : Date.now() + "-" + Math.random().toString(36).slice(2);  
+  
+    const filePath = "submissions/" + randomId + ".pdf";  
+  
+      
+const uploadStartedAt = Date.now();  
+  
+message.textContent =  
+  "Step 1/2: Uploading PDF. Please wait... Keep this page open.";  
+  
+const { error: uploadError } = await db.storage.from(BUCKET).upload(  
+  filePath,  
+  file,  
+  {  
+    contentType: "application/pdf",  
+    upsert: false,  
+    cacheControl: "3600"  
+  }  
+);  
+  
+if (uploadError) throw uploadError;  
+  
+console.log(  
+  "PDF upload time:",  
+  ((Date.now() - uploadStartedAt) / 1000).toFixed(1),  
+  "seconds"  
+);  
+  
+    uploadedPath = filePath;  
+    $("progressBar").style.width = "80%";  
+    message.textContent = "Step 2/2: PDF uploaded. Saving submission details...";  
+  
+    const { error: insertError } = await db.from("assignments").insert([{  
+      student_name: studentName,  
+      roll_number: rollNumber,  
+      class_name: className,  
+      division: division,  
+      subject: "Economics",  
+      pdf_path: filePath  
+    }]);  
+  
+    if (insertError) {  
+      throw new Error("PDF uploaded, but saving details failed: " + insertError.message);  
+    }  
+  
+    $("progressBar").style.width = "100%";  
+    message.textContent = "Assignment submitted successfully!";  
+    form.reset();  
+    alert("Success! Your assignment has been submitted.");  
+  
+  } catch (error) {  
+    console.error("Submission error:", error);  
+    message.textContent = "Submission failed: " + error.message;  
+    alert("Submission failed:\n" + error.message);  
+  
+    if (uploadedPath) {  
+      console.warn("Uploaded PDF path:", uploadedPath);  
+    }  
+  } finally {  
+    button.disabled = false;  
+    button.textContent = "Submit Assignment";  
+  
+    setTimeout(() => {  
+      $("progressTrack").classList.add("hidden");  
+      $("progressBar").style.width = "0";  
+    }, 800);  
+  }  
+});  
+  
+async function verifyAdmin() {  
+  const { data: userData, error: userError } = await db.auth.getUser();  
+  
+  if (userError || !userData.user) {  
+    throw new Error("Please log in again.");  
+  }  
+  
+  const { data: admin, error } = await db.from("portal_admins")  
+    .select("user_id")  
+    .eq("user_id", userData.user.id)  
+    .maybeSingle();  
+  
+  if (error) throw error;  
+  if (!admin) throw new Error("This account is not authorised as an admin.");  
+  
+  return userData.user;  
+}  
+  
+$("loginForm").addEventListener("submit", async function(e) {  
+  e.preventDefault();  
+  
+  const button = $("loginBtn");  
+  const message = $("loginMessage");  
+  
+  button.disabled = true;  
+  message.textContent = "Checking login...";  
+  
+  try {  
+    const { error } = await db.auth.signInWithPassword({  
+      email: $("adminEmail").value.trim(),  
+      password: $("adminPassword").value  
+    });  
+  
+    if (error) throw error;  
+  
+    await verifyAdmin();  
+    this.reset();  
+    page = 0;  
+    showSection(dashboardSection);  
+    await loadAssignments();  
+  
+  } catch (error) {  
+    console.error("Login error:", error);  
+    message.textContent = error.message || "Login failed.";  
+    alert("Login failed:\n" + message.textContent);  
+  } finally {  
+    button.disabled = false;  
+  }  
+});  
+  
+function addCell(row, value) {  
+  const cell = document.createElement("td");  
+  cell.textContent = value == null ? "" : String(value);  
+  row.appendChild(cell);  
+  return cell;  
+}  
+  
+async function openPdf(path, download, pdfTab) {  
+  try {  
+    await verifyAdmin();  
+  
+    const request = db.storage.from(BUCKET).createSignedUrl(  
+      path,  
+      300,  
+      { download: download ? true : false }  
+    );  
+  
+    const timeout = new Promise((_, reject) => {  
+      setTimeout(() => reject(new Error(  
+        "Supabase took too long to create the PDF link. Check your connection and try again."  
+      )), 15000);  
+    });  
+  
+    const { data, error } = await Promise.race([request, timeout]);  
+  
+    if (error) throw error;  
+    if (!data || !data.signedUrl) {  
+      throw new Error("Supabase did not return a PDF link.");  
+    }  
+  
+    if (download) {  
+      if (pdfTab) pdfTab.location.replace(data.signedUrl);  
+      else window.location.assign(data.signedUrl);  
+    } else {  
+      if (!pdfTab || pdfTab.closed) {  
+        throw new Error("The PDF tab was blocked. Allow pop-ups for this site and try again.");  
+      }  
+      pdfTab.location.replace(data.signedUrl);  
+    }  
+  
+  } catch (error) {  
+    if (pdfTab && !pdfTab.closed) {  
+      try {  
+        pdfTab.document.body.innerHTML =  
+          "<p style='font:16px Arial;padding:20px'>Could not open PDF: " +  
+          String(error.message || error).replace(/[<>&"]/g, "") +  
+          "<br><br>Return to the assignment portal and try again.</p>";  
+      } catch (_) {  
+        pdfTab.close();  
+      }  
+    }  
+    throw error;  
+  }  
+}  
+  
+/* Numeric roll-number sorting with pagination.  
+   Fetches records in batches, sorts them numerically, then displays 25 per page. */  
+function compareRollNumbers(a, b) {  
+  const rollA = Number(String(a.roll_number ?? "").trim());  
+  const rollB = Number(String(b.roll_number ?? "").trim());  
+  
+  if (Number.isFinite(rollA) && Number.isFinite(rollB) && rollA !== rollB) {  
+    return rollA - rollB;  
+  }  
+  
+  if (Number.isFinite(rollA) !== Number.isFinite(rollB)) {  
+    return Number.isFinite(rollA) ? -1 : 1;  
+  }  
+  
+  return String(a.roll_number ?? "").localeCompare(  
+    String(b.roll_number ?? ""),  
+    undefined,  
+    { numeric: true }  
+  );  
+}  
+  
+async function getAllAssignments() {  
+  const allRecords = [];  
+  let offset = 0;  
+  
+  while (true) {  
+    const { data, error } = await db.from("assignments")  
+      .select("id, student_name, roll_number, division, subject, pdf_path")  
+      .order("id", { ascending: true })  
+      .range(offset, offset + FETCH_BATCH_SIZE - 1);  
+  
+    if (error) throw error;  
+  
+    const batch = data || [];  
+    allRecords.push(...batch);  
+  
+    if (batch.length < FETCH_BATCH_SIZE) break;  
+  
+    offset += batch.length;  
+  }  
+  
+  allRecords.sort((a, b) => {  
+    const rollOrder = compareRollNumbers(a, b);  
+    if (rollOrder !== 0) return rollOrder;  
+  
+    return String(a.student_name || "").localeCompare(  
+      String(b.student_name || "")  
+    );  
+  });  
+  
+  return allRecords;  
+}  
+  
+async function loadAssignments() {  
+  if (loadingList) return;  
+  
+  loadingList = true;  
+  $("refreshBtn").disabled = true;  
+  $("prevBtn").disabled = true;  
+  $("nextBtn").disabled = true;  
+  $("dashboardMessage").textContent = "Loading and sorting submissions...";  
+  $("assignmentList").replaceChildren();  
+  
+  try {  
+    await verifyAdmin();  
+  
+    const allRecords = await getAllAssignments();  
+    const count = allRecords.length;  
+    const totalPages = Math.max(1, Math.ceil(count / PAGE_SIZE));  
+  
+    if (page >= totalPages) page = totalPages - 1;  
+    if (page < 0) page = 0;  
+  
+    const start = page * PAGE_SIZE;  
+    const records = allRecords.slice(start, start + PAGE_SIZE);  
+  
+    $("dashboardMessage").textContent = count === 0  
+      ? "No assignments submitted yet."  
+      : "Total submissions: " + count +  
+        ". Sorted by roll number. Showing " +  
+        (start + 1) + "–" + (start + records.length) + ".";  
+  
+    for (const item of records) {  
+      const row = document.createElement("tr");  
+  
+      addCell(row, item.student_name);  
+      addCell(row, item.roll_number);  
+      addCell(row, item.division);  
+      addCell(row, item.subject);  
+  
+      const pdfCell = document.createElement("td");  
+      const actions = document.createElement("div");  
+      actions.className = "actions";  
+  
+      const viewButton = document.createElement("button");  
+      viewButton.type = "button";  
+      viewButton.className = "secondary";  
+      viewButton.textContent = "View PDF";  
+  
+      const downloadButton = document.createElement("button");  
+      downloadButton.type = "button";  
+      downloadButton.className = "secondary";  
+      downloadButton.textContent = "Download";  
+  
+      viewButton.addEventListener("click", async () => {  
+        const pdfTab = window.open("about:blank", "_blank");  
+  
+        if (!pdfTab) {  
+          alert("Your browser blocked the PDF tab. Allow pop-ups and try again.");  
+          return;  
+        }  
+  
+        try {  
+          pdfTab.document.title = "Opening assignment PDF...";  
+          pdfTab.document.body.innerHTML =  
+            "<p style='font:16px Arial;padding:20px'>Preparing your PDF…</p>";  
+  
+          viewButton.disabled = true;  
+          viewButton.textContent = "Preparing...";  
+          await openPdf(item.pdf_path, false, pdfTab);  
+  
+        } catch (error) {  
+          alert("Could not open PDF:\n" + (error.message || error));  
+        } finally {  
+          viewButton.disabled = false;  
+          viewButton.textContent = "View PDF";  
+        }  
+      });  
+  
+      downloadButton.addEventListener("click", async () => {  
+        downloadButton.disabled = true;  
+  
+        try {  
+          await verifyAdmin();  
+  
+          const { data, error } = await db.storage.from(BUCKET)  
+            .createSignedUrl(item.pdf_path, 300, { download: true });  
+  
+          if (error) throw error;  
+          if (!data || !data.signedUrl) {  
+            throw new Error("No download link was returned.");  
+          }  
+  
+          window.location.assign(data.signedUrl);  
+  
+        } catch (error) {  
+          alert("Could not download PDF:\n" + error.message);  
+        } finally {  
+          downloadButton.disabled = false;  
+        }  
+      });  
+  
+      actions.append(viewButton, downloadButton);  
+      pdfCell.appendChild(actions);  
+      row.appendChild(pdfCell);  
+      $("assignmentList").appendChild(row);  
+    }  
+  
+    $("pageLabel").textContent = "Page " + (page + 1) + " of " + totalPages;  
+    $("prevBtn").disabled = page === 0;  
+    $("nextBtn").disabled = page >= totalPages - 1;  
+  
+  } catch (error) {  
+    console.error("Dashboard error:", error);  
+    $("dashboardMessage").textContent =  
+      "Could not load submissions: " + error.message;  
+    alert("Dashboard error:\n" + error.message);  
+  
+  } finally {  
+    loadingList = false;  
+    $("refreshBtn").disabled = false;  
+  }  
+}  
+  
+$("refreshBtn").addEventListener("click", loadAssignments);  
+  
+$("prevBtn").addEventListener("click", async () => {  
+  if (page > 0) {  
+    page--;  
+    await loadAssignments();  
+  }  
+});  
+  
+$("nextBtn").addEventListener("click", async () => {  
+  page++;  
+  await loadAssignments();  
+});  
+  
+$("logoutBtn").addEventListener("click", async () => {  
+  await db.auth.signOut();  
+  $("assignmentList").replaceChildren();  
+  $("dashboardMessage").textContent = "";  
+  page = 0;  
+  showSection(studentSection);  
+});  
+  
+console.log("Assignment Portal loaded.");  
+})();  
+</script>  </body>  
+  </html>
